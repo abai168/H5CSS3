@@ -1,0 +1,36 @@
+<!-- 
+	box-shadow:[inset] x-offset y-offset blur-radius spread-radius color;
+	
+	参数说明：
+	阴影类型：可选；如省略，默认是外阴影；它有且只有一个值“inset”，表示为内阴影；
+	x-offset：阴影水平偏移量，可以是正负值。正值，则阴影在元素的右边；负值，则阴影在元素的左边；
+	y-offset：阴影垂直偏移量，可以是正负值。正值，则阴影在元素的底部；负值时，则阴影在元素的顶部；
+	blur-radius：阴影模糊半径，可选，它只能是正值。如值为0，则阴影不具有模糊效果；它的值越大，阴影的边缘就越模糊；
+	spread-radius：阴影扩展半径，可选，它可以是正负值。如为正值，则扩大阴影的尺寸；如为负值，则缩小阴影的尺寸；
+	color：阴影颜色，可选，如不设定颜色，浏览器会取默认色，但各浏览器默认取色不一致。（经测试，在Safari上是半透明的，在chrome、firefox、ie上都是黑色的）。不推荐省略颜色值。
+	注意：颜色（color）也可以放在最前面的，inset值也可以放在最后面；阴影并不会占据空间，也就是说它不会阴影布局
+ -->
+<html>
+<head>
+	<title>阴影</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<style>
+		div{
+			width:300px;
+			height:100px;
+			margin:20px 20px;
+			background-color: #000;
+			/*box-shadow:10px 5px 6px  13px blue;*/
+			box-shadow: inset 10px 5px 6px  13px red;
+			/*box-shadow:-16px 0px 3px -6px blue;/*左阴影*/
+
+			/*注意：设置多个阴影时，覆盖顺序是由前至后，定义越前面的阴影有越高的层级，会覆盖在后面定义的阴影之上。*/
+			/*多阴影,每个阴影之间用“,”逗号隔开*/
+			/*box-shadow:-16px 0px 3px -6px blue,16px 0px 3px -6px yellow,0px -16px 3px -6px red,0px 16px 3px -6px orange;*/
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>
